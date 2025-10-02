@@ -15,12 +15,12 @@ img {
     z-index: 1;
     position:fixed;
     top:40px;
-    left:380px;
+    left:378px;
     width: 360px;
     height: 0;
     border-left: 0px solid transparent;
     border-right: 500px solid transparent;
-    border-bottom: 315px solid rgba(255, 166, 0, 0.473);
+    border-bottom: 315px solid #FB8627;
 } 
 
 #maska {
@@ -30,7 +30,7 @@ img {
     left:900px;
     width: 350px;
     height: 160px;
-    border-left: 350px solid rgba(12, 80, 38, 0.7);
+    border-left: 350px solid #013502;
     border-right: 0px solid transparent;
     border-bottom: 0px solid transparent;
     border-top: 50px solid transparent;
@@ -57,19 +57,19 @@ img {
     height: 0;
     border-left: 0px solid transparent;
     border-right: 150px solid transparent;
-    border-bottom: 115px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 115px solid rgb(40, 40, 40);
 }
 
 #okno-tyl{
     z-index: 4;
     position:fixed;
     top:70px;
-    left:325px;
+    left:335px;
     width: 140px;
     height: 0;
     border-right: 0px solid transparent;
     border-left: 95px solid transparent;
-    border-bottom: 115px solid rgba(0, 0, 0, 1);
+    border-bottom: 115px solid rgb(40, 40, 40);
 }
 
 #vent1 {
@@ -80,7 +80,7 @@ img {
     border-bottom: 0px solid rgba(0, 0, 255, 0);
     border-top: 130px solid rgba(0, 0, 255, 0);
     border-left: 40px solid rgba(0, 0, 255, 0);
-    border-right: 150px solid rgba(71, 71, 71, 0.711);
+    border-right: 150px solid rgba(71, 71, 71, 1);
     width: 0px;
     height: 0px
 }
@@ -89,11 +89,11 @@ img {
     z-index: 3;
     position:fixed;
     top: 60px;
-    left: 380px;
+    left: 378px;
     border-top: 0px solid rgba(0, 0, 255, 0);
     border-bottom: 50px solid rgba(0, 0, 255, 0);
     border-right: 40px solid rgba(0, 0, 255, 0);
-    border-left: 40px solid rgba(71, 71, 71, 0.711);
+    border-left: 40px solid rgba(71, 71, 71, 1);
     width: 0px;
     height: 0px
 }
@@ -106,7 +106,7 @@ img {
     width: 150px;
     border-right: 0px solid transparent;
     border-left: 95px solid transparent;
-    border-bottom: 115px solid rgba(255, 166, 0, 0.473);
+    border-bottom: 115px solid #FB8627;
 }
 
 #drzwi-tyl::after{
@@ -116,7 +116,7 @@ img {
     left: 325px;
     width: 575px;
     height: 180px;
-    background-color: rgba(255, 166, 0, 0.473);
+    background-color: #FB8627;
 }
 
 #szyba {
@@ -124,10 +124,10 @@ img {
     position:fixed;
     top: 10px;
     left: 810px;
-    border-top: 0px solid rgba(0, 0, 255, 0);
-    border-right: 0px solid rgba(0, 0, 255, 0);
-    border-left: 10px solid rgba(0, 0, 255, 0);
-    border-bottom: 200px solid rgba(0, 0, 0, 1);
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 200px solid rgba(71, 71, 71, 1);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     transform: rotate(-58deg);
