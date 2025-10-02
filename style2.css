@@ -1,0 +1,42 @@
+#buda-blue {
+    z-index: 2;
+    position:fixed;
+    top: 40px;
+    left: 24px;
+    border-bottom: 0px solid rgba(0, 0, 255, 0);
+    border-top: 164px solid rgba(0, 0, 255, 0);
+    border-left: 40px solid rgba(0, 0, 255, 0);
+    border-right: 316px solid rgba(0, 0, 255, 0.511);
+    width: 0px;
+    height: 100px
+}
+#bumper-tyl {
+    z-index: 3;
+    position:fixed;
+    top: 270px;
+    left: 0px;
+    border-bottom: 66px solid rgba(0, 0, 255, 0);
+    border-top: 0px solid rgba(0, 0, 255, 0);
+    border-left: 30px solid rgba(0, 0, 255, 0);
+    border-right: 300px solid rgba(148, 224, 33, 0.511);
+    width: 0px;
+    height: 60px
+}
+#wlew-paliwa {
+    z-index: 3;
+    position:fixed;
+    top: 223px;
+    left: 115px;
+    background-color: rgba(255, 0, 0, 0.344);
+    width: 45px;
+    height: 35px;
+}
+#light-tyl-blinker {
+    z-index: 3;
+    position:fixed;
+    top: 210px;
+    left: 55px;
+    
+    width: 20px;
+    height: 40px;
+}
