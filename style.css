@@ -29,11 +29,11 @@ img {
     top:145px;
     left:900px;
     width: 350px;
-    height: 160px;
+    height: 140px;
     border-left: 350px solid #013502;
     border-right: 0px solid transparent;
     border-bottom: 0px solid transparent;
-    border-top: 50px solid transparent;
+    border-top: 70px solid transparent;
 }
 
 #prog {

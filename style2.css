@@ -3,10 +3,10 @@
     position:fixed;
     top: 40px;
     left: 24px;
-    border-bottom: 0px solid rgba(0, 0, 255, 0);
+    border-bottom: 0px solid rgba(38, 51, 84, 0);
     border-top: 164px solid rgba(0, 0, 255, 0);
     border-left: 40px solid rgba(0, 0, 255, 0);
-    border-right: 316px solid #263354;
+    border-right: 316px solid rgb(38, 51, 84);
     width: 0px;
     height: 100px
 }
@@ -17,29 +17,30 @@
     left: 0px;
     border-bottom: 66px solid rgba(0, 0, 255, 0);
     border-top: 0px solid rgba(0, 0, 255, 0);
-    border-left: 30px solid rgba(0, 0, 255, 0);
+    border-left: 40px solid rgba(0, 0, 255, 0);
     border-right: 300px solid rgba(113, 113, 113);
     width: 0px;
     height: 60px
 }
 #bumper-przod {
-    z-index: 3;
+    z-index: 1;
     position:fixed;
-    top: 300px;
+    top: 290px;
     left: 1145px;
-    border-bottom: 35px solid rgba(0, 0, 255, 0);
+    border-bottom: 20px solid rgba(0, 0, 255, 0);
     border-top: 0px solid rgba(0, 0, 255, 0);
-    border-left: 120px solid rgba(113, 113, 113);
+    border-left: 125px solid rgba(113, 113, 113);
     border-right: 0px solid rgba(147, 224, 33, 0);
     width: 0px;
-    height: 50px
+    height: 65px
 }
 #wlew-paliwa {
     z-index: 3;
     position:fixed;
-    top: 223px;
-    left: 115px;
+    top: 222px;
+    left: 114px;
     background-color: #bc6319;
+    border: 1px solid rgba(0, 0, 0);
     width: 45px;
     height: 35px;
 }
@@ -48,29 +49,29 @@
     position:fixed;
     top: 210px;
     left: 55px;
-    border-bottom: 30px solid rgba(148, 224, 33, 0.511);
+    border-bottom: 30px solid rgb(211, 224, 33);
     border-top: 5px solid rgba(147, 224, 33, 0);
     border-left: 0px solid rgba(147, 224, 33, 0);
-    border-right: 9px solid rgba(148, 224, 33, 0.511);
+    border-right: 9px solid rgb(211, 224, 33);
     width: 0px;
-    height: 5px;
+    height: 0px;
 }
 #light-tyl-stop {
     z-index: 2;
     position:fixed;
     top: 240px;
     left: 55px;
-    border-bottom: 30px solid rgba(224, 33, 33, 0.511);
+    border-bottom: 30px solid rgb(175, 0, 0);
     border-top: 0px solid rgba(147, 224, 33, 0);
     border-left: 0px solid rgba(147, 224, 33, 0);
-    border-right: 9px solid rgba(224, 33, 33, 0.511);
+    border-right: 9px solid rgb(175, 0, 0);
     width: 0px;
     height: 5px;
 }
 #pasek-top {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
-    top: 210px;
+    top: 213px;
     left: 66px;
     background-color: rgb(255, 255, 255);
     transform: rotate(0.8deg);
@@ -78,7 +79,7 @@
     height: 11px;
 }
 #pasekk {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
     top: 230px;
     left: 161px;
@@ -88,7 +89,7 @@
     height: 11px;
 }
 #pasek-bottom {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
     top: 246px;
     left: 161px;
@@ -98,7 +99,7 @@
     height: 11px;
 }
 #pasekk-S {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
     top: 223px;
     left: 66px;
@@ -108,7 +109,7 @@
     height: 11px;
 }
 #pasek-bottom-S {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
     top: 241px;
     left: 66px;
@@ -118,52 +119,52 @@
     height: 11px;
 }
 #pasek-top-przod {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
-    top: 230px;
-    left: 1065px;
+    top: 235px;
+    left: 1064px;
     background-color: rgb(255, 255, 255);
     transform: rotate(10deg);
-    width: 155px;
+    width: 183px;
     height: 11px;
 }
 #pasekk-przod {
-    z-index: 4;
+    z-index: 10;
     position:fixed;
-    top: 250px;
-    left: 1059px;
+    top: 253px;
+    left: 1058px;
     background-color: rgb(255, 255, 255);
     transform: rotate(10deg);
-    width: 155px;
+    width: 186px;
     height: 11px;
 }
 #pasek-bottom-przod {
-    z-index: 4;
+    z-index: 9;
     position:fixed;
-    top: 266px;
-    left: 1059px;
+    top: 272px;
+    left: 1058px;
     background-color: rgb(255, 255, 255);
     transform: rotate(10deg);
-    width: 140px;
-    height: 5px;
+    width: 185px;
+    height: 7px;
 }
-#klamka-tyl {
-    z-index: 5;
+.klamka{
     position:fixed;
+    z-index: 11;
     top: 215px;
-    left: 340px;
+}
+.klamka-tlo {
     background-color: rgb(62, 62, 62);
     width: 40px;
     height: 15px;
 }
-#klamka-przod {
-    z-index: 5;
-    position:fixed;
-    top: 215px;
-    left: 600px;
-    background-color: rgb(62, 62, 62);
-    width: 40px;
-    height: 15px;
+.klamka-srodek {
+    position: absolute; 
+    background-color: rgb(32, 32, 32);
+    width: 30px;
+    height: 7px;
+    top: 6px;
+    left: 2px;
 }
 #lusterko {
     z-index: 5;
@@ -182,20 +183,68 @@
 #kierunek-przod {
     z-index: 4;
     position:fixed;
-    top: 245px;
-    left: 1220px;
-    background-color: rgb(225, 255, 0);
+    top: 225px;
+    left: 1247px;
+    background-color: rgba(225, 255, 0, 0.636);
+    border: 1px solid rgba(0, 0, 0);
     width: 10px;
-    height: 15px;
-    transform: rotate(8deg);
+    height: 20px;
+    /* transform: rotate(8deg); */
 }
 #swiatlo-przod {
     z-index: 4;
     position:fixed;
-    top: 262px;
-    left: 1217px;
-    background-color: rgb(255, 255, 255);
+    top: 246px;
+    left: 1247px;
+    background-color: rgba(255, 255, 255, 0.564);
+    border: 1px solid rgba(0, 0, 0);
     width: 10px;
-    height: 15px;
-    transform: rotate(8deg);
+    height: 30px;
+    /* transform: rotate(8deg); */
+}
+#nadkole {
+    z-index: 4;
+    position: fixed;
+    top: 270px;
+    left: 196px;
+    width: 180px;
+    height: 90px;
+    background: rgb(78, 77, 77);
+    border-top-left-radius: 90px 90px;
+    border-top-right-radius: 90px 90px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid rgb(0, 0, 0);
+}
+.keska {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    background: #000000;
+    z-index: 9;
+    
+}
+.luk {
+    position: fixed;
+    width: 90px;      /* długość łuku */
+    height: 90px;      /* wysokość łuku */
+    border: 2px solid #222; /* kolor i grubość linii */
+    border-bottom: none; 
+    border-left: none;
+    border-top: none;    /* usuwamy dolną krawędź */
+    border-radius: 0 90px 0 0; /* zaokrąglenie tylko dolnych rogów */
+    background: transparent;
+    z-index: 11;
+}
+.plastik {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    background: rgb(78, 77, 77);
+    border: 1px solid rgb(0, 0, 0);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    z-index: 9;
 }
