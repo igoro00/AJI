@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    <title>MyTODO App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <h1>MyNotes</h1>
+    <div>
+        <label>Search</label>
+        <input class="form-control" type="text" id="inputSearch" placeholder="Type Your seach here..." />
+        
+        <label>From</label>
+        <input class="form-control" type="date" id="inputDateFromSearch" placeholder="From" />
+        <label>To</label>
+        <input class="form-control" type="date" id="inputDateToSearch" placeholder="To" />
+        
+    </div>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Place</th>
+                <th>Category</th>
+                <th>Due Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="todoListView"></tbody>
+    </table>
+    <div class="mt-4">
+        <h2>Add new TODO</h2>
+        <form>
+            <label>Title</label>
+            <input class="form-control" type="text" id="inputTitle" />
+            <label>Description</label>
+            <input class="form-control" type="text" id="inputDescription" />
+            <label>Place</label>
+            <input class="form-control" type="text" id="inputPlace" />
+            <label>Due date</label>
+            <input class="form-control" type="date" id="inputDate" />
+            <input class="btn btn-primary" type="button" value="add" onclick="addTodo()" />
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>

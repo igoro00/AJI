@@ -1,0 +1,16 @@
+{
+  "name": "aji",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@google/genai": "^1.26.0",
+    "@types/express": "^5.0.3",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
