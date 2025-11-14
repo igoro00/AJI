@@ -64,6 +64,8 @@ model Order {
   userName String @map("user_name")
   userEmail String @map("user_email")
   userPhone String @map("user_phone")
+  rating Int?
+  comment String?
 
   orderItems OrderItem[]
 

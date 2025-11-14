@@ -74,17 +74,17 @@ async function seed(prisma?: PrismaClient) {
         data: [
             {
                 orderId: orders[0].id,
-                productId: (await prisma.product.findFirst({ where: { name: "Smartphone" } })).id,
+                productId: (await prisma.product.findFirst({ where: { name: "Smartphone" } }))!.id,
                 quantity: 1,
             },
             {
                 orderId: orders[0].id,
-                productId: (await prisma.product.findFirst({ where: { name: "Novel Book" } })).id,
+                productId: (await prisma.product.findFirst({ where: { name: "Novel Book" } }))!.id,
                 quantity: 2,
             },
             {
                 orderId: orders[1].id,
-                productId: (await prisma.product.findFirst({ where: { name: "T-Shirt" } })).id,
+                productId: (await prisma.product.findFirst({ where: { name: "T-Shirt" } }))!.id,
                 quantity: 3,
             },
         ],

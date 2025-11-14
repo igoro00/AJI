@@ -1,18 +1,37 @@
 import { z } from "zod";
 import { OrderStatus, PrismaClient } from "@/generated/prisma/client";
-import { Created, HttpError, NotFound, OK } from "./HttpErrors";
+import { Created, Forbidden, HttpError, NotFound, OK } from "./HttpErrors";
 
 const prisma = new PrismaClient();
 
-const productValidator = z.object({
-	name: z.string().nonempty(),
-	description: z.string().nonempty(),
-	price: z.number().positive(),
-	weight: z.number().positive(),
-    categoryId: z.string().uuid(),
-}).strict();
+const productValidator = z
+	.object({
+		name: z.string().nonempty(),
+		description: z.string().nonempty(),
+		price: z.number().positive(),
+		weight: z.number().positive(),
+		categoryId: z.string().uuid(),
+	})
+	.strict();
 
-type Product = z.infer<typeof productValidator>;
+const statusValidator = z.enum(
+	Object.keys(OrderStatus) as [string, ...string[]],
+);
+
+const orderValidator = z
+	.object({
+		userName: z.string().nonempty(),
+		userEmail: z.string().email(),
+		userPhone: z.string().regex(/^\+?\d{1,14}$/),
+		status: statusValidator.default("UNCONFIRMED"),
+		orderItems: z.array(
+			z.object({
+				productId: z.string().uuid(),
+				quantity: z.number().int().positive(),
+			}),
+		),
+	})
+	.strict();
 
 const server = Bun.serve({
 	routes: {
@@ -33,7 +52,7 @@ const server = Bun.serve({
 				const body = await req.json();
 				await prisma.product.update({
 					where: { id },
-					data: body,
+					data: productValidator.partial().parse(body),
 				});
 				throw new OK();
 			},
@@ -43,12 +62,8 @@ const server = Bun.serve({
 			GET: async () => Response.json(await prisma.product.findMany()),
 			POST: async (req) => {
 				const body = await req.json();
-				const validated = productValidator.parse(body);
 				await prisma.product.create({
-					data: {
-                        ...validated,
-                        category: { connect: { id: validated.categoryId } },
-                    },
+					data: productValidator.parse(body),
 				});
 				throw new Created();
 			},
@@ -61,8 +76,17 @@ const server = Bun.serve({
 			GET: async () => Response.json(await prisma.order.findMany()),
 			POST: async (req) => {
 				const body = await req.json();
+				const validated = orderValidator.parse(body);
 				await prisma.order.create({
-					data: body,
+					data: {
+						userName: validated.userName,
+						userEmail: validated.userEmail,
+						userPhone: validated.userPhone,
+						status: validated.status as keyof typeof OrderStatus,
+						orderItems: {
+							create: validated.orderItems,
+						},
+					},
 				});
 				throw new Created();
 			},
@@ -72,9 +96,33 @@ const server = Bun.serve({
 			PUT: async (req) => {
 				const { id } = req.params;
 				const body = await req.json();
+				const order = await prisma.order.findUnique({ where: { id } });
+				if (!order) {
+					throw new NotFound();
+				}
+				const validated = orderValidator.partial().parse(body);
+				if (
+					order.status === "CANCELED" &&
+					validated.status &&
+					validated?.status !== "CANCELED"
+				) {
+					throw new Forbidden("Cannot modify a canceled order");
+				}
+				if (
+					order.status === "COMPLETED" &&
+					validated.status &&
+					validated?.status !== "COMPLETED"
+				) {
+					throw new Forbidden("Cannot modify a completed order");
+				}
 				await prisma.order.update({
 					where: { id },
-					data: body,
+					data: {
+						userName: validated.userName,
+						userEmail: validated.userEmail,
+						userPhone: validated.userPhone,
+						status: validated.status as keyof typeof OrderStatus,
+					},
 				});
 				throw new OK();
 			},
@@ -83,9 +131,6 @@ const server = Bun.serve({
 		"/api/orders/status/:status": {
 			GET: async (req) => {
 				const { status } = req.params;
-				const statusValidator = z.enum(
-					Object.keys(OrderStatus) as [string, ...string[]],
-				);
 				try {
 					statusValidator.parse(status);
 				} catch (e) {
