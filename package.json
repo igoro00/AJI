@@ -1,19 +1,46 @@
 {
-  "name": "aji",
+  "name": "bun-tanstack-router-boilerplate",
+  "version": "0.0.1",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "scripts":{
-    "start": "bun backend.ts"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+  "type": "module",
+  "description": "fullstack project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
+    "dev:client": "bunx --bun vite",
+    "dev:server": "bun run --hot server/index.ts",
+    "build:client": "bunx --bun vite build",
+    "start": "bun run server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "db:reset": "bun prisma db push --force-reset && bun prisma db seed"
   },
   "dependencies": {
-    "@google/genai": "^1.26.0",
-    "@types/express": "^5.0.3",
-    "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "@prisma/client": "^6.19.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "@tanstack/react-router": "^1.120.20",
+    "@tanstack/react-router-devtools": "^1.120.20",
+    "dotenv": "^17.2.3",
+    "prisma": "^6.19.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8",
+    "zod": "^3.25.57"
+  },
+  "devDependencies": {
+    "@tanstack/router-plugin": "^1.136.1",
+    "@types/react": "^19.1.7",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.1",
+    "bun-types": "^1.2.15",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.28.0",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "prisma": {
+    "seed": "bun prisma/seed.ts"
   }
 }
